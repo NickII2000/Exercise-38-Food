@@ -44,26 +44,24 @@ window.addEventListener('DOMContentLoaded', () => {
     const deadLine = '2022-02-15';
 
     function endTimeRemaining(endTime) {
-        const t = Date.parse(endTime) - Date.parse(new Date()),
-            days = Math.floor(t / (1000 * 60 * 60 * 24)),
-            hours = Math.floor((t / (1000 * 60 * 60)) % 24),
-            minutes = Math.floor((t / (1000 * 60)) % 60),
-            seconds = Math.floor((t / 1000) % 60);
+        const t = Date.parse(endTime) - Date.parse(new Date());
+
         return {
             total: t,
-            days: days,
-            hours: hours,
-            minutes: minutes,
-            seconds: seconds,
+            days: Math.floor(t / (1000 * 60 * 60 * 24)),
+            hours: Math.floor((t / (1000 * 60 * 60)) % 24),
+            minutes: Math.floor((t / (1000 * 60)) % 60),
+            seconds: Math.floor((t / 1000) % 60),
         };
     }
 
     function getZero(num) {
-        if (num >= 0 && num < 10) {
-            return `0${num}`;
-        } else {
-            return num;
-        }
+        // if (num >= 0 && num < 10) {
+        //     return `0${num}`;
+        // } else {
+        //     return num;
+        // }
+        return (num >= 0 && num < 10) ? `0${num}` : num;
     }
 
     function setClock(selector, endTime) {
