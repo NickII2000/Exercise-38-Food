@@ -55,14 +55,16 @@ window.addEventListener('DOMContentLoaded', () => {
         };
     }
 
-    function getZero(num) {
-        // if (num >= 0 && num < 10) {
-        //     return `0${num}`;
-        // } else {
-        //     return num;
-        // }
-        return (num >= 0 && num < 10) ? `0${num}` : num;
-    }
+    // function getZero(num) {
+    //     // if (num >= 0 && num < 10) {
+    //     //     return `0${num}`;
+    //     // } else {
+    //     //     return num;
+    //     // }
+    //     return (num >= 0 && num < 10) ? `0${num}` : num;
+    // }
+
+    const getZero = (num) => (num >= 0 && num < 10) ? `0${num}` : num;
 
     function setClock(selector, endTime) {
         const timer = document.querySelector(selector),
