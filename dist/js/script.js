@@ -215,3 +215,33 @@ window.addEventListener('DOMContentLoaded', () => {
     ).render();
 
 });
+
+
+function func1(a, b, c) {
+    console.log(arguments);
+    console.log(typeof arguments);
+
+    console.log(arguments[0]);
+    // expected output: 1
+
+    console.log(arguments[1]);
+    // expected output: 2
+
+    console.log(arguments[2]);
+    // expected output: 3
+
+    console.log('объекты arguments js итерируемые ===========================');
+    for (let value of arguments) {
+        console.log(value);
+    }
+    console.log('===========================');
+
+    const arr = Array.from(arguments);
+    console.log(arr);
+    console.log(typeof arr);
+
+}
+
+func1(1, 2, 3, 4, 'word', {
+    a: 'apple'
+}, ['dog', 'cat'], undefined, null, NaN, false);
