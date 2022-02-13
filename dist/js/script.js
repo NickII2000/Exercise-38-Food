@@ -230,6 +230,9 @@ function func1(a, b, c) {
     console.log(arguments[2]);
     // expected output: 3
 
+    console.log(arguments[3]);
+    // expected output: 4
+
     console.log('объекты arguments js итерируемые ===========================');
     for (let value of arguments) {
         console.log(value);
