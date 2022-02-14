@@ -248,3 +248,43 @@ function func1(a, b, c) {
 func1(1, 2, 3, 4, 'word', {
     a: 'apple'
 }, ['dog', 'cat'], undefined, null, NaN, false);
+
+
+// Ввод: натуральное число n
+// Вывод: количество простых чисел строго меньше n
+
+const n = 101; // натуральное число n > 1
+let arrBoolean = [];
+for (let i = 2; i < n; i++) {
+    arrBoolean[i] = true;
+}
+
+for (let i = 2; i * i <= (n - 1); i++) {
+    if (arrBoolean[i] === true) {
+        for (let j = i * i; j <= (n - 1); j += i) {
+            arrBoolean[j] = false;
+        }
+    }
+}
+
+let count = 0;
+for (let i = 2; i < n; i++) {
+    if (arrBoolean[i]) {
+        count++;
+        console.log(`Простое число: ${i}`);
+    }
+}
+console.log(`ВЫВОД: количество простых чисел строго меньше натурального ${n}: ${count}`);
+
+// Вход: натуральное число n (n > 1).
+// Выход: все простые числа от 2 до n.
+
+// Пусть A — булевый массив, индексируемый числами от 2 до n, 
+// изначально заполненный значениями true.
+
+//  для i := 2, 3, 4, ..., пока i * i ≤ n:
+//   если A[i] = true:
+//     для j := i * i, i * i + i, i * i + 2i, ..., пока j ≤ n:
+//       A[j] := false
+
+//  возвращаем: все числа i, для которых A[i] = true.
