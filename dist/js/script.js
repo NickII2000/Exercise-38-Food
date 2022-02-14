@@ -216,6 +216,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 });
 
+//Other
 
 function func1(a, b, c) {
     console.log(arguments);
